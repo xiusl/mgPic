@@ -116,9 +116,12 @@ def resize_image(img):
     # 获取图像尺寸
     width, height = img.size
 
+
     target_width = 750 - 48
     # 计算新的高度
     new_height = int(height * target_width / width)
+    # 新高度限制在 1155 - 56
+
     # 调整图像大小
     resized_img = img.resize((target_width, new_height), Image.LANCZOS)
     # 应用轻微锐化滤镜以保持细节清晰
